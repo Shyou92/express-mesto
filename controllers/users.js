@@ -1,5 +1,10 @@
-const readJson = require("../utils/readJSONFromFile");
+/* eslint-disable quotes */
+/* eslint-disable no-shadow */
+/* eslint-disable consistent-return */
+/* eslint-disable no-underscore-dangle */
+
 const path = require("path");
+const readJson = require("../utils/readJSONFromFile");
 
 const getUsers = (req, res) => {
   const fileName = path.join(__dirname, "..", "data", "users.json");

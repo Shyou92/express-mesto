@@ -1,3 +1,11 @@
+/* eslint-disable no-console */
+/* eslint-disable no-path-concat */
+/* eslint-disable no-multiple-empty-lines */
+/* eslint-disable func-names */
+/* eslint-disable quotes */
+/* eslint-disable prefer-template */
+/* eslint-disable prefer-arrow-callback */
+
 const express = require("express");
 const router = require("./routes");
 

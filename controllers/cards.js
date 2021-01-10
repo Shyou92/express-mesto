@@ -1,5 +1,6 @@
-const readJson = require("../utils/readJSONFromFile");
+/* eslint-disable quotes */
 const path = require("path");
+const readJson = require("../utils/readJSONFromFile");
 
 const getCards = (req, res) => {
   const fileName = path.join(__dirname, "..", "data", "cards.json");
