@@ -16,7 +16,7 @@ const getUsers = (req, res) => {
 };
 
 const getSingleUser = (req, res) => {
-  const { id } = req.params;
+  const id = req.params._id;
   User.findOne({ id })
     .then((user) => {
       if (!user) {
@@ -36,6 +36,7 @@ const createUser = (req, res) => {
   User.create({ name, about, avatar })
     .then((user) => res.send({ data: user }))
     .catch((err) => {
+      console.log(err.name);
       if (err.name === "ValidationError") {
         return res.status(ERROR_CODE_400).send("Введите корректные данные");
       } else {
