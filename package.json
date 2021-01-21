@@ -18,10 +18,7 @@
     "nodemon": "^2.0.6"
   },
   "dependencies": {
-    "express": "^4.17.1"
-  },
-  "quotes": [
-    "error",
-    "double"
-  ]
+    "express": "^4.17.1",
+    "mongoose": "^5.11.12"
+  }
 }
