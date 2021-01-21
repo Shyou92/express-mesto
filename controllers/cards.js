@@ -1,4 +1,3 @@
-/* eslint-disable quotes */
 const path = require("path");
 const readJson = require("../utils/readJSONFromFile");
 
