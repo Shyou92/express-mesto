@@ -4,7 +4,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb-base"],
+  "extends": ["airbnb-base"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -12,15 +12,17 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react"],
   "rules": {
-    "linebreak-style": ["error", "windows", "unix"],
-    "no-console": "error",
-    "no-path-concat": "error",
-    "no-multiple-empty-lines": "error",
-    "func-names": "error",
-    "quotes": "error",
-    "prefer-template": "error",
-    "prefer-arrow-callback": "error"
+    "linebreak-style": ["error", "windows"],
+    "no-console": "off",
+    "no-path-concat": "off",
+    "no-multiple-empty-lines": "off",
+    "func-names": "off",
+    "quotes": "off",
+    "prefer-template": "off",
+    "prefer-arrow-callback": "error",
+    "no-underscore-dangle": 0,
+    "consistent-return": "off",
+    "no-useless-escape": "off"
   }
 }

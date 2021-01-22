@@ -1,9 +1,9 @@
-const User = require("../models/user");
+const User = require('../models/user');
 const {
   ERROR_CODE_400,
   ERROR_CODE_404,
   ERROR_CODE_500,
-} = require("../utils/errorConfig");
+} = require('../utils/errorConfig');
 
 const getUsers = (req, res) => {
   User.find({})
@@ -22,7 +22,7 @@ const getSingleUser = (req, res) => {
       if (!user) {
         return res
           .status(ERROR_CODE_404)
-          .send({ message: "Нет пользователя с таким id" });
+          .send({ message: 'Нет пользователя с таким id' });
       }
       res.status(200).send(user);
     })
@@ -37,25 +37,23 @@ const createUser = (req, res) => {
     .then((user) => res.send({ data: user }))
     .catch((err) => {
       console.log(err.name);
-      if (err.name === "ValidationError") {
-        return res.status(ERROR_CODE_400).send("Введите корректные данные");
-      } else {
-        return res.status(ERROR_CODE_500).send({ message: "Произошла ошибка" });
+      if (err.name === 'ValidationError') {
+        return res.status(ERROR_CODE_400).send('Введите корректные данные');
       }
+      return res.status(ERROR_CODE_500).send({ message: 'Произошла ошибка' });
     });
 };
 
 const updateProfile = (req, res) => {
   const id = req.user._id;
 
-  User.findByIdAndUpdate(id, { name: "Alex", about: "Web dev" })
+  User.findByIdAndUpdate(id, { name: 'Alex', about: 'Web dev' })
     .then((user) => res.status(200).send({ data: user }))
     .catch((err) => {
-      if (err.name === "ValidationError") {
-        return res.status(ERROR_CODE_400).send("Введите корректные данные");
-      } else {
-        return res.status(ERROR_CODE_500).send({ message: "Произошла ошибка" });
+      if (err.name === 'ValidationError') {
+        return res.status(ERROR_CODE_400).send('Введите корректные данные');
       }
+      return res.status(ERROR_CODE_500).send({ message: 'Произошла ошибка' });
     });
 };
 
@@ -65,15 +63,14 @@ const updateAvatar = (req, res) => {
 
   User.findByIdAndUpdate(id, {
     avatar:
-      "https://proofthatblog.com/wp-content/uploads/2013/06/question-mark.jpg",
+      'https://proofthatblog.com/wp-content/uploads/2013/06/question-mark.jpg',
   })
     .then((user) => res.status(200).send({ data: user }))
     .catch((err) => {
-      if (err.name === "ValidationError") {
-        return res.status(ERROR_CODE_400).send("Введите корректные данные");
-      } else {
-        return res.status(ERROR_CODE_500).send({ message: "Произошла ошибка" });
+      if (err.name === 'ValidationError') {
+        return res.status(ERROR_CODE_400).send('Введите корректные данные');
       }
+      return res.status(ERROR_CODE_500).send({ message: 'Произошла ошибка' });
     });
 };
 
