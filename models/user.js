@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -18,13 +18,14 @@ const userSchema = new mongoose.Schema({
     required: true,
     validate: {
       validator(v) {
+        // eslint-disable-next-line no-useless-escape
         return /^https?\:\/\/(www\.)?[(a-z0-9\-\.\_~:/?#\[\]@!$&'\(\)*+,;=){1,}]+\.[a-z]{2,6}(([(a-z0-9\-\.\_~:/?#\[\]@!$&'\(\)*+,;=){1,}])+)?#?$/gi.test(
-          v
+          v,
         );
       },
-      message: "Введите правильный URL",
+      message: 'Введите правильный URL',
     },
   },
 });
 
-module.exports = mongoose.model("user", userSchema);
+module.exports = mongoose.model('user', userSchema);
